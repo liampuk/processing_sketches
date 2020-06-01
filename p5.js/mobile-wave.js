@@ -2,7 +2,7 @@ var wavep5;
 
 var waveSketch = function (p) {
 
-    p.numLines = 300;
+    p.numLines = 1000;
     p.ySquish = 0.5;
     p.h = 600;
     p.w = 300;
@@ -17,15 +17,15 @@ var waveSketch = function (p) {
         p.canvas.parent('main');
         p.strokeWeight(6);
         p.strokeCap(p.ROUND);
-        p.stroke('rgba(19, 193, 232,0.4)');
+        p.stroke('rgba(19, 193, 232,0.1)');
         // p.offset = p.width / 2 - p.w;
         p.offset = (p.width - (p.w * 2)) / 2;
     }
 
     p.draw = function () {
-        // p.mouseMod = (p.mouseY/p.height)*0.7+0.1
-        // p.ySquish = (p.mouseY/p.height)*0.7+0.1;
-        // p.inc += 2.8;
+        p.mouseMod = (p.mouseY/p.height)*0.7+0.1
+        p.ySquish = (p.mouseY/p.height)*0.7+0.1;
+        p.inc += 2.8;
         if (p.inc >= p.w * 2) {
             p.inc = 0;
         }
